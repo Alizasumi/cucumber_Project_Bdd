@@ -24,7 +24,7 @@ public class Bank_Cash extends TestBase{
 	@FindBy(how = How.XPATH, using = "//input[@id='contact_person']") WebElement contact_Person;
 	@FindBy(how = How.XPATH, using = "//input[@id='contact_phone']") WebElement contact_Phone;
 	@FindBy(how = How.XPATH, using = "//input[@id='ib_url']") WebElement internet_Banking;
-	@FindBy(how = How.XPATH, using = "//*[@id=\"page-wrapper\"]/div[3]/div[1]/div/div/div[2]/form/button") WebElement save_Button;
+	@FindBy(how = How.XPATH, using = "//*[contains(text(),' Submit')]") WebElement save_Button;
 	@FindBy(how = How.XPATH, using = "//div[@class='alert alert-success fade in']") WebElement success_Button;
 	
 	//Methods to interact with the elements
@@ -49,10 +49,10 @@ public class Bank_Cash extends TestBase{
 		initial_Balance.sendKeys(TestBase.generateRandomNumbers() + balance);
 }
 	public void enterAccountNumber(String accountNumber) {
-		account_Number.sendKeys(accountNumber);
+		account_Number.sendKeys(TestBase.generateRandomNumbers() + accountNumber);
 }
 	public void enterOnContactPerson(String contactPerson) {
-		contact_Person.sendKeys(contactPerson);
+		contact_Person.sendKeys(TestBase.generateRandomNumbers() + contactPerson);
 }
 	public void enterPhoneNumber(String phone) {
 		contact_Phone.sendKeys(TestBase.generateRandomNumbers() + phone);
@@ -61,7 +61,7 @@ public class Bank_Cash extends TestBase{
 		internet_Banking.sendKeys(TestBase.generateRandomNumbers() + internet);
 }
 	public void clickOnSubmitButton() {
-		save_Button.sendKeys();
+		save_Button.click();
 	}
 	public String checkSucessMessage() {
 		return success_Button.getText();

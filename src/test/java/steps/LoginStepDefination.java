@@ -46,9 +46,10 @@ public class LoginStepDefination extends TestBase{
 			 driver.get("https://www.google.com/"); 
 		 }
 	}
+	  
 	@When("^User enters \"([^\"]*)\" from mysql database$")
-	public void user_enters_from_mysql_database(String arg) throws Throwable {
-		 switch(arg) {
+	public void user_enters_from_mysql_database(String data) throws Throwable {
+		 switch(data) {
 		 case"username":
 		 loginPage.enterUserName(databasePage.getData("username"));
 		 break;
@@ -123,16 +124,22 @@ public class LoginStepDefination extends TestBase{
 		switch(element) {
 		case "accountTitle":
 			bankCashPage.enterAccountTitle(accountDetails);
+			break;
 		case "description":
 			bankCashPage.enterDescriptionOfTheAccount(accountDetails);
+			break;
 		case "initialBalance":
 			bankCashPage.enterInitialBalanceOfTheAccount(accountDetails);
+			break;
 		case "accountNumber":
 			bankCashPage.enterAccountNumber(accountDetails);
+			break;
 		case "contactPerson":
 			bankCashPage.enterOnContactPerson(accountDetails);
+			break;
 		case "Phone":
 			bankCashPage.enterPhoneNumber(accountDetails);
+			break;
 		case "internetBankingURL":
 			bankCashPage.enterInternetBankingInformation(accountDetails);
 			break;

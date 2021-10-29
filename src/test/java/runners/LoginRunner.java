@@ -9,7 +9,7 @@ import cucumber.api.junit.Cucumber;
 @CucumberOptions(
 		features ="classpath:features",
 		glue ="steps",
-		tags ="@BankCashFeature ",
+		tags ="@DbLogin",
 //		tags ="@LoginFeature",
 //		tags ="@Scenario2",		
 		monochrome =true,
